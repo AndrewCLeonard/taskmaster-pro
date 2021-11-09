@@ -1,6 +1,6 @@
 /* 
 https://courses.bootcampspot.com/courses/951/pages/5-dot-1-6-add-ability-to-edit-task-description?module_item_id=330667
-At this point, we have the first half of the editing process complete. Now we need to update and save the task.
+Let's digest this one step at a time:
 */
 
 var tasks = {};
@@ -33,7 +33,7 @@ var loadTasks = function () {
 
 	// loop over object properties
 	$.each(tasks, function (list, arr) {
-		console.log(list, arr);
+		// console.log(list, arr);
 		// then loop over sub-array
 		arr.forEach(function (task) {
 			createTask(task.text, task.date, list);
@@ -47,12 +47,27 @@ var saveTasks = function () {
 
 // callback function for swapping <p> for <form> when clicked
 $(".list-group").on("click", "p", function () {
+	// console.log(this);
 	var text = $(this).text().trim();
-	//
+	// $("<textarea>") creates new <textarea> elements, OTOH $("textarea") tells jQuery to find all <textarea> elements
 	var textInput = $("<textarea>").addClass("form-control").val(text);
+	// when clicking the <p> element, this swaps out the <p> for var textInput, turning it into a <textarea>
 	$(this).replaceWith(textInput);
 	// add focus state when editing task
 	textInput.trigger("focus");
+});
+
+$(".list-group").on("blur", "textarea", function () {
+	// get the textarea's current value/text
+	var text = $(this).val().trim();
+	// get the parent ul's id attribute
+	var status = $(this).closest(".list-group").attr("id").replace("list-", "");
+	// get the task's position in the list of other li elements
+	var index = $(this).closest(".list-group-item").index();
+	// console.log to check vars are working:
+	// console.log(`text = ${text} status = ${status} index = ${index}`)
+	tasks[status][index].text = text;
+	saveTasks();
 });
 
 // modal was triggered
