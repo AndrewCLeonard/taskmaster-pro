@@ -1,7 +1,6 @@
 <!-- 
-5.2.6 Use Bootstrap Utility Classes
-https://courses.bootcampspot.com/courses/951/pages/5-dot-2-6-use-bootstrap-utility-classes?module_item_id=330795 
--->
+5.3.4 Add jQuery UI to the Project
+https://courses.bootcampspot.com/courses/951/pages/5-dot-3-4-add-jquery-ui-to-the-project?module_item_id=330877-->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -9,12 +8,54 @@ https://courses.bootcampspot.com/courses/951/pages/5-dot-2-6-use-bootstrap-utili
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" />
-		<link rel="stylesheet" href="./assets/css/style.css" />
+		<!-- Bootstrap library first -->
+		<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" /> -->
+		<!-- jQuery library needs to load *before* the jQuery UI -->
+		<!-- <link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css"
+			integrity="sha512-okE4owXD0kfXzgVXBzCDIiSSlpXn3tJbNodngsTnIYPJWjuYhtJ+qMoc0+WUwLHeOwns0wm57Ka903FqQKM1sA=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/> -->
+		<!-- <link rel="stylesheet" href="./assets/css/style.css" /> -->
 		<title>Taskmaster Pro</title>
+
+		<!-- copy/paste start -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" />
+		<!-- add the style sheet here -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css" />
+		<link rel="stylesheet" href="./assets/css/style.css" />
+		<!-- copy/paste end -->
 	</head>
 
 	<body>
+		<!-- copy/paste start -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<!-- add the js file here -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+		<script src="./assets/js/script.js"></script>
+		<!-- copy/paste end -->
+
+		<!-- my jQuery start -->
+		<!-- <script
+			src="https://code.jquery.com/jquery-3.6.0.min.js"
+			integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+			crossorigin="anonymous"
+		></script> -->
+		<!-- jQuery UI needs to load *after* the core library. the UI library adds extra methods to the core functionality -->
+		<!-- <script
+			src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"
+			integrity="sha512-uto9mlQzrs59VwILcLiRYeLKPPbS/bT71da/OEBYEwcdNUk8jYIy+D176RYoop1Da+f9mvkYrmj5MCLZWEtQuA=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		></script>
+		<script src="https://unpkg.com/@popperjs/core@2"></script> -->
+
+		<!-- my jQuery end -->
+
 		<div class="row min-vh-100 no-gutters">
 			<header class="col-12 col-lg-3 bg-dark text-light sticky-top d-flex flex-column p-4 p-lg-3">
 				<h1 class="text-center">Taskmaster Pro Edition</h1>
